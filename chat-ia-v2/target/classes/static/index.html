@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat IA</title>
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+<div class="app">
+    <!-- Barra lateral con la lista de conversaciones -->
+    <aside class="sidebar">
+        <button id="boton-nueva" class="boton-nueva">+ Nueva conversación</button>
+        <input
+                type="text"
+                id="buscador"
+                class="buscador"
+                placeholder="Buscar conversación...">
+        <ul id="lista-conversaciones" class="lista-conversaciones"></ul>
+    </aside>
+
+    <!-- Zona principal del chat -->
+    <main class="chat">
+        <header class="chat-header">
+            <h1 id="titulo-conversacion">Selecciona o crea una conversación</h1>
+        </header>
+
+        <div id="mensajes" class="mensajes"></div>
+
+        <form id="form-mensaje" class="form-mensaje">
+                <textarea
+                        id="input-mensaje"
+                        placeholder="Escribe un mensaje..."
+                        rows="1"
+                        disabled></textarea>
+            <button type="submit" id="boton-enviar" disabled>Enviar</button>
+        </form>
+    </main>
+</div>
+
+<!-- Modal reutilizable -->
+<div id="modal" class="modal-overlay oculto">
+    <div class="modal">
+        <h2 id="modal-titulo"></h2>
+        <p id="modal-mensaje"></p>
+        <input type="text" id="modal-input" class="oculto" placeholder="">
+        <div class="modal-botones">
+            <button id="modal-cancelar" class="boton-secundario">Cancelar</button>
+            <button id="modal-aceptar" class="boton-principal">Aceptar</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
+<script src="/script.js"></script>
+</body>
+</html>
